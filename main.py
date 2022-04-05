@@ -13,19 +13,6 @@ def delete_webhook(webhook: str) -> None:
         if webhook in f.read().splitlines():
             return
         f.write(webhook + "\n")
-    resp = requests.post(
-        webhook,
-        json={
-            "content": "We are Anonymous. We are Legion. We do not forgive. We do not forget. Expect us.",
-            "tts": True,
-            "username": "Anonymous via vive la revolution and The Fight Against Malware",
-            "avatar_url": "https://cdn.discordapp.com/icons/910733698452815912/8dd25417b5c2a2cf49e1b98a74a15aa8.webp?size=96",
-        },
-        headers={
-            "User-Agent": "AntiMalwareBot/gistscript (+https://discord.gg/TWhrmZFXqb)"
-        },
-    )
-    print(resp)
     print(requests.delete(webhook))
 
 while True:
